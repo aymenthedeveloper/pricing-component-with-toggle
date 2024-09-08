@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'montserrat';
+  src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+:root{
+  --Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+body{
+  font-family: 'montserrat', sans-serif;
+  margin: 0;
+}
+
+.wrapper{
+  max-width: 1440px;
+  outline: 1px solid;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 50px 0;
+  min-height: 100vh;
+}
+main > h1{
+  margin-bottom: 40px;
+  color: var(--Grayish-Blue);
+}
+main .toggle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--Light-Grayish-Blue);
+  margin-bottom: 40px;
+}
+main .toggle input{
+  display: none;
+  cursor: pointer;
+}
+main .toggle .toggle-btn{
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  position: relative;
+  cursor: pointer;
+}
+main .toggle .toggle-btn::after{
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  top: 4px;
+  right: 4px;
+  transition: transform .25s ease;
+}
+main .toggle input.annually + .toggle-btn::after{
+  transform: translateX(-24px);
+}
+
+main .pricing-cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+}
+main .pricing-cards .card{
+  text-align: center;
+}
+main .pricing-cards .card .annual-price{
+  display: none;
+}
+main .pricing-cards.annually .card .annual-price{
+  display: block;
+}
+main .pricing-cards.annually .card .monthly-price{
+  display: none;
+}

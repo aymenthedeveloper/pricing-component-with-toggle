@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <title>Pricing component with toggle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <main>
+      <h1>Our Pricing</h1>
+      <div class="toggle">
+        <span>Annually</span> 
+        <input type="checkbox" name="toggle-input" id="toggle-input">
+        <label for="toggle-input" class="toggle-btn"></label>
+        <span>Monthly</span>
+      </div>
+      <div class="pricing-cards">
+        <div class="card basic">
+          <h2>Basic</h2>
+          <p class="monthly-price">&dollar;19.00</p>
+          <p class="annual-price">&dollar;199.99</p>
+          <div class="features">
+            <p class="feature">500 GB Storage</p>
+            <p class="feature">2 Users Allowed</p>
+            <p class="feature">Send up to 3 GB</p>
+          </div>
+          <button class="cta">Learn More</button>
+        </div>
+
+        <div class="card professional">
+          <h2>professional</h2>
+          <p class="monthly-price">&dollar;24.99</p>
+          <p class="annual-price">&dollar;249.99</p>
+          <div class="features">
+            <p class="feature">1 TB Storage</p>
+            <p class="feature">5 Users Allowed</p>
+            <p class="feature">Send up to 10 GB</p>
+          </div>
+          <button class="cta">Learn More</button>
+        </div>
+
+        <div class="card master">
+          <h2>Master</h2>
+          <p class="monthly-price">&dollar;39.99</p>
+          <p class="annual-price">&dollar;399.99</p>
+          <div class="features">
+            <p class="feature">2 TB Storage</p>
+            <p class="feature">10 Users Allowed</p>
+            <p class="feature">Send up to 20 GB</p>
+          </div>
+          <button class="cta">Learn More</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
