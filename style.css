@@ -13,11 +13,15 @@
 body{
   font-family: 'montserrat', sans-serif;
   margin: 0;
+  background-color: var(--Very-Light-Grayish-Blue);
 }
 
 .wrapper{
   max-width: 1440px;
   outline: 1px solid;
+  background-image: url(./images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 main{
@@ -31,7 +35,7 @@ main > h1{
   margin-bottom: 40px;
   color: var(--Grayish-Blue);
 }
-main .toggle{
+main .toggle-container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,13 +43,13 @@ main .toggle{
   font-weight: 700;
   font-size: 15px;
   color: var(--Light-Grayish-Blue);
-  margin-bottom: 40px;
+  margin-bottom: 65px;
 }
-main .toggle input{
+main .toggle-container input{
   display: none;
   cursor: pointer;
 }
-main .toggle .toggle-btn{
+main .toggle-container .toggle-btn{
   width: 56px;
   height: 32px;
   border-radius: 16px;
@@ -53,7 +57,7 @@ main .toggle .toggle-btn{
   position: relative;
   cursor: pointer;
 }
-main .toggle .toggle-btn::after{
+main .toggle-container .toggle-btn::after{
   content: "";
   position: absolute;
   background-color: #fff;
@@ -64,7 +68,7 @@ main .toggle .toggle-btn::after{
   right: 4px;
   transition: transform .25s ease;
 }
-main .toggle input.annually + .toggle-btn::after{
+main .toggle-container input.annually + .toggle-btn::after{
   transform: translateX(-24px);
 }
 
@@ -72,17 +76,74 @@ main .pricing-cards{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 64px;
+  
 }
 main .pricing-cards .card{
-  text-align: center;
+  text-align: center;  
+  width: 350px;
+  height: 450px;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 16px 30px;
+  box-sizing: border-box;
 }
-main .pricing-cards .card .annual-price{
-  display: none;
+main .pricing-cards .card h2{
+  font-size: 18px;
+  margin-bottom: 18px;
 }
-main .pricing-cards.annually .card .annual-price{
-  display: block;
+main .pricing-cards .card .price{
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-block: 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  letter-spacing: -2px;
 }
-main .pricing-cards.annually .card .monthly-price{
-  display: none;
+main .pricing-cards .card .price::before{
+  content: "$";
+  font-size: 2.5rem;
+}
+main .pricing-cards .card .features{
+  position: relative;
+}
+main .pricing-cards .card .features .feature{
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 18px;
+}
+main .pricing-cards .card .features::after{
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+main .pricing-cards .card .features .feature::before{
+  content: '';
+  position: absolute;
+  inset: -16px 0 auto 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+main .pricing-cards .card.professional{
+  height: 500px;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+  padding-block: 42px;
+
+}
+main .pricing-cards .card.professional .features::after,
+main .pricing-cards .card.professional .features .feature::before{
+  background-color: #fff;
+}
+
+@media (max-width: 1080px) {
+  main .pricing-cards{
+    flex-direction: column;
+    gap: 16px;
+  } 
 }
