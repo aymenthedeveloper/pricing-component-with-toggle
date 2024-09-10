@@ -181,6 +181,12 @@ main .pricing-cards .card.professional .cta:is(:hover, :focus){
  }
 
 
+ @media (min-width: 1440px) {
+  .wrapper{
+    margin: 0 auto;
+  } 
+ }
+
 @media (max-width: 1080px) {
   main{
     padding-block: 36px 100px;
